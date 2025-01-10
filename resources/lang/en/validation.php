@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Validation Language Lines
+    | Validation Language Lines - Tutaj są wszystkie teksty do walidacji formularzy
     |--------------------------------------------------------------------------
     |
     | The following language lines contain the default error messages used by
@@ -18,7 +18,7 @@ return [
     'active_url' => 'The :attribute is not a valid URL.',
     'after' => 'The :attribute must be a date after :date.',
     'after_or_equal' => 'The :attribute must be a date after or equal to :date.',
-    'alpha' => 'The :attribute must only contain letters.',
+    'alpha' => 'The :attribute must only contain letters.', //tylko litery np pole 'nazwisko'
     'alpha_dash' => 'The :attribute must only contain letters, numbers, dashes and underscores.',
     'alpha_num' => 'The :attribute must only contain letters and numbers.',
     'array' => 'The :attribute must be an array.',
