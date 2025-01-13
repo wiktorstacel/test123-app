@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
+            if (Auth::guard($guard)->check()) { //Middleware, który sprawdza czy użytkownik jest zalogowany
                 return redirect(RouteServiceProvider::HOME);
             }
         }

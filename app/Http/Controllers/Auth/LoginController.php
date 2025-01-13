@@ -19,7 +19,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers; //Trait z LoginController, gdzie są wszystkie metody np login
 
     /**
      * Where to redirect users after login.
@@ -35,6 +35,13 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest')->except('logout'); //oznacza, że middleware guest nie będzie stosowany do metody logout w kontrolerze.
+        //except() - Pozwala wykluczyć konkretne metody kontrolera z zastosowania danego middleware.
+        /*W tym przypadku oznacza to, że middleware guest nie będzie działał, 
+        gdy wywołana zostanie metoda logout (te metody są w trait AuthenticatesUse).
+        Jak to działa w praktyce:
+        - Inne metody kontrolera (np. login, register) będą chronione middleware guest. 
+          Jeśli użytkownik spróbuje je wywołać będąc zalogowanym, zostanie przekierowany.
+        - Metoda logout nie będzie objęta tą ochroną, więc użytkownik będzie mógł się wylogować bez problemu.*/
     }
 }
